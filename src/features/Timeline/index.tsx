@@ -9,7 +9,13 @@ const Timeline: React.FC = () => {
   const localeCode = "en-US";
 
   useEffect(() => {
-    setTimeline(getTimeline());
+    (async function () {
+      const timeline = await getTimeline();
+      if (timeline.length) {
+        console.log(timeline.length);
+      }
+      setTimeline(timeline);
+    })();
   }, []);
 
   useEffect(() => {
@@ -41,6 +47,7 @@ const Timeline: React.FC = () => {
     };
   }, [timeline]);
 
+  console.log(timeline);
   return (
     <div ref={timelineRef} className="timeline">
       {/* <h1>:)</h1> */}

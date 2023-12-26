@@ -8,7 +8,11 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ record, localeCode }) => {
   const Content =
-    typeof record.content === "string" ? record.content : <record.content />;
+    typeof record.content === "string" ? (
+      <div className="timeline__item-pub">{record.content}</div>
+    ) : (
+      <record.content />
+    );
   const DRaw = new Date(record.date);
   const formattedDate = DRaw.toLocaleDateString(localeCode, {
     year: "numeric",
@@ -22,11 +26,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ record, localeCode }) => {
         {formattedDate}
       </time>
       <br />
-      <a className="timeline__item-link" href="#">
+      <a className="timeline__item-link" href={record.url}>
         {record.title}
       </a>
       <br />
-      <small className="timeline__item-pub">{Content}</small>
+      {Content}
     </li>
   );
 };
