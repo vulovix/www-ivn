@@ -1,11 +1,20 @@
 import { BlogContent } from "./components";
-import staticRecords from "./static";
+// import staticRecords from "./static";
 
 export interface TimelineRecord {
   date: Date;
   title: string;
   content: string | React.FC;
   url?: string;
+}
+
+export interface Article {
+  slug: string;
+  title: string;
+  subtitle: string;
+  createdAt: number;
+  image: string;
+  categories: Array<{ name: string; slug: string }>;
 }
 
 export const getTimeline = async (): Promise<TimelineRecord[]> => {
@@ -29,7 +38,7 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
   }
   const timeline: TimelineRecord[] = [
     // ...staticRecords,
-    ...blog.map((article) => ({
+    ...blog.map((article: Article) => ({
       // title: `Oaza・${article.title}`,
       title: `${article.title}`,
       date: new Date(article.createdAt),

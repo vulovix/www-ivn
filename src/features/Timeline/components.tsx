@@ -1,7 +1,11 @@
+interface Category {
+  name: string;
+  slug: string;
+}
 export const BlogContent = (props: {
   description: string;
   image: string;
-  categories: Array<any>;
+  categories: Array<Category>;
 }): JSX.Element => {
   return (
     <div
