@@ -1,7 +1,8 @@
 :root {
-  --hue: 3;
+  --hue: 190;
   --bg: hsl(var(--hue), 10%, 90%);
   --fg: hsl(var(--hue), 10%, 10%);
+  /* --primary: snow; */
   --primary: hsl(var(--hue), 90%, 50%);
   --primaryT: hsla(var(--hue), 90%, 50%, 0);
   --trans-dur: 0.3s;
@@ -9,8 +10,10 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
+    --text: snow;
     --bg: hsl(var(--hue), 10%, 10%);
     --fg: hsl(var(--hue), 10%, 90%);
+    /* --primary: snow; */
     --primary: hsl(var(--hue), 90%, 70%);
   }
 }

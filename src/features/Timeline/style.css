@@ -2,6 +2,7 @@
     margin: 0 auto;
     padding: 1rem 0;
 }
+
 .timeline h1 {
     font-size: 2em;
     text-align: center;
@@ -13,7 +14,7 @@
 }
 
 .timeline__item {
-    padding: 0 0 1rem 1.25em;
+    padding: 0 0 0.75rem 1.25rem;
     position: relative;
     text-align: left;
 }
@@ -35,7 +36,8 @@
 
 .timeline__item:before,
 .timeline__item:after {
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
+    background-color: var(--text);
     content: "";
     display: block;
     position: absolute;
@@ -55,6 +57,7 @@
     top: 0.75em;
     width: 0.125em;
     height: 100%;
+    /* background-color: snow; */
     transform: translateX(-50%);
 }
 
@@ -74,34 +77,38 @@
 }
 
 .timeline__item-link{
-    border-bottom: 1.5px solid transparent;
+    /* border-bottom: 1.5px solid transparent; */
 }
 
 .timeline__item-link[href^="https://"],
 .timeline__item-link[href^="https://"]:visited {
-    color: var(--primary);
-    transition: border-bottom-color var(--trans-dur) ease;
+    /* color: var(--primary); */
+    color: var(--text);
+    /* transition: border-bottom-color var(--trans-dur) ease; */
 }
 
 .timeline__item-link {
     display: inline-block;
+    position: relative;
+    top: -1px;
     transition: color var(--trans-dur);
 }
 
 .timeline__item-link[href^="https://"]:hover {
+    /* color: var(--primary); */
     /* text-decoration: underline; */
-    /* color: inherit; */
-    border-bottom-color: var(--primary);
+    /* border-bottom-color: var(--primary); */
 }
 
-.timeline__item-pub,
+.timeline__item-link,
 .timeline__item-time {
-    font-size: 0.833em;
+    font-size: 0.833rem;
     line-height: 1.8;
+    font-weight: bold;
 }
 
 .timeline__item-pub {
-    margin-top: 0.25rem;
+    /* margin-top: 0.05rem; */
     font-size: 0.75rem;
     line-height: 1.67;
     text-wrap: pretty;
@@ -116,6 +123,27 @@
     }
 }
 
+.timeline__item-categories{
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.35rem;
+}
+.timeline__item-category {
+    font-size: 0.55rem;
+    font-weight: bold;
+    padding: 0.15rem 0.25rem;
+    background-color: var(--fg);
+    border-radius: 2px;
+    color: var(--bg);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.timeline__item-category:hover{
+    color: var(--fg);
+    background-color: var(--bg);
+    /* background-color: var(--primary); */
+}
 .timeline__item-time {
     font-weight: bold;
 }

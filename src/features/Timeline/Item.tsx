@@ -26,7 +26,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ record, localeCode }) => {
         {formattedDate}
       </time>
       <br />
-      <a className="timeline__item-link" href={record.url}>
+      <a
+        className="timeline__item-link"
+        target={record.url?.startsWith("https://") ? "_blank" : undefined}
+        href={record.url}
+      >
         {record.title}
       </a>
       <br />

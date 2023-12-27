@@ -12,31 +12,33 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
   let blog = [];
   try {
     blog = await fetch("/oaza/api/articles/public").then((res) => res.json());
-    for (let i = 0; i < blog.length; i++) {
-      const article = { ...blog[i] };
-      const data = await fetch(
-        `/oaza/api/articles/public/images/${article.slug}`
-      ).then((res) => res.text());
-      if (data) {
-        article.image = data;
-      }
-      blog[i] = article;
-    }
+    // for (let i = 0; i < blog.length; i++) {
+    //   const article = { ...blog[i] };
+    //   const data = await fetch(
+    //     `/oaza/api/articles/public/images/${article.slug}`
+    //   ).then((res) => res.text());
+    //   if (data) {
+    //     article.image = data;
+    //   }
+    //   blog[i] = article;
+    // }
   } catch (e) {
     console.log(e);
   } finally {
     // timeline = [...blog, ...defaultRecords];
   }
   const timeline: TimelineRecord[] = [
-    ...staticRecords,
+    // ...staticRecords,
     ...blog.map((article) => ({
-      title: article.title,
+      // title: `Oaza・${article.title}`,
+      title: `${article.title}`,
       date: new Date(article.createdAt),
       url: `https://blog.ivn.dev/articles/${article.slug}`,
       content: () =>
         BlogContent({
           description: article.subtitle,
           image: article.image,
+          categories: article.categories,
         }),
     })),
   ];

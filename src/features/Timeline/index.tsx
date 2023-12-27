@@ -32,7 +32,7 @@ const Timeline: React.FC = () => {
       },
       {
         root: null,
-        rootMargin: "0px",
+        rootMargin: "100px",
         threshold: 1,
       }
     );
