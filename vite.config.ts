@@ -8,10 +8,10 @@ export default defineConfig({
     // host: true,
     // port: 3000,
     proxy: {
-      "/oaza": {
-        target: "https://blog.ivn.dev",
+      "/oazaapi": {
+        target: "https://blog.ivn.dev/api",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/oaza/, ""),
+        rewrite: (path) => path.replace(/^\/oazaapi/, ""),
       },
     },
   },

@@ -20,13 +20,13 @@ export interface Article {
 export const getTimeline = async (): Promise<TimelineRecord[]> => {
   let blog: Array<Article> = [];
   try {
-    blog = (await fetch("/oaza/api/articles/public").then((res) =>
+    blog = (await fetch("/oazaapi/articles/public").then((res) =>
       res.json()
     )) as Array<Article>;
     // for (let i = 0; i < blog.length; i++) {
     //   const article = { ...blog[i] };
     //   const data = await fetch(
-    //     `/oaza/api/articles/public/images/${article.slug}`
+    //     `/oazaapi/articles/public/images/${article.slug}`
     //   ).then((res) => res.text());
     //   if (data) {
     //     article.image = data;
