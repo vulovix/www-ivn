@@ -18,9 +18,11 @@ export interface Article {
 }
 
 export const getTimeline = async (): Promise<TimelineRecord[]> => {
-  let blog = [];
+  let blog: Array<Article> = [];
   try {
-    blog = await fetch("/oaza/api/articles/public").then((res) => res.json());
+    blog = (await fetch("/oaza/api/articles/public").then((res) =>
+      res.json()
+    )) as Array<Article>;
     // for (let i = 0; i < blog.length; i++) {
     //   const article = { ...blog[i] };
     //   const data = await fetch(

@@ -138,9 +138,11 @@
     color: var(--bg);
     cursor: pointer;
     text-transform: uppercase;
+    border: 1.5px solid var(--fg);
 }
 .timeline__item-category:hover{
     color: var(--fg);
+    border-color: var(--fg);
     background-color: var(--bg);
     /* background-color: var(--primary); */
 }

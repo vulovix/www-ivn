@@ -34,8 +34,10 @@ export const BlogContent = (props: {
         </a> */}
         {props.categories.map((c) => (
           <a
+            key={c.slug}
             className="timeline__item-category"
             target="_blank"
+            rel="noreferrer"
             href={`https://blog.ivn.dev/categories/${c.slug}`}
           >
             {c.name}

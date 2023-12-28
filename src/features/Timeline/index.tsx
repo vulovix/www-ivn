@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import TimelineItem from "./Item";
 import "./style.css";
 import { TimelineRecord, getTimeline } from "./constants";
+import { noop } from "../../utils/operations";
 
 const Timeline: React.FC = () => {
   const [timeline, setTimeline] = useState<TimelineRecord[]>([]);
@@ -9,13 +10,11 @@ const Timeline: React.FC = () => {
   const localeCode = "en-US";
 
   useEffect(() => {
-    (async function () {
+    const loadTimeline = async function (): Promise<void> {
       const timeline = await getTimeline();
-      if (timeline.length) {
-        console.log(timeline.length);
-      }
       setTimeline(timeline);
-    })();
+    };
+    loadTimeline().then(noop, noop);
   }, []);
 
   useEffect(() => {

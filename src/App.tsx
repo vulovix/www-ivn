@@ -1,9 +1,13 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import Intro from "./features/Intro";
 import Timeline from "./features/Timeline";
 
 function App() {
-  return <Timeline />;
+  return (
+    <>
+      <Intro />
+      <Timeline />
+    </>
+  );
 }
 
 export default App;

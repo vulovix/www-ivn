@@ -29,6 +29,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ record, localeCode }) => {
       <a
         className="timeline__item-link"
         target={record.url?.startsWith("https://") ? "_blank" : undefined}
+        rel="noreferrer"
         href={record.url}
       >
         {record.title}
