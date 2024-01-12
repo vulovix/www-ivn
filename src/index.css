@@ -3,16 +3,33 @@
   --bg: hsl(var(--hue), 10%, 90%);
   --fg: hsl(var(--hue), 10%, 10%);
   --primary: hsl(var(--hue), 90%, 50%);
-  --primaryT: hsla(var(--hue), 90%, 50%, 0);
+  /* --primary: #31b869; */
+  /* --primaryT: hsla(var(--hue), 90%, 50%, 0); */
   --trans-dur: 0.3s;
 }
+
+/* .roboto-condensed-normal {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-condensed-bold {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+} */
+
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
     --text: snow;
-    --bg: hsl(var(--hue), 10%, 10%);
+    --bg: hsl(var(--hue), 10%, 5%);
     --fg: hsl(var(--hue), 10%, 90%);
-    --primary: hsl(var(--hue), 90%, 70%);
+    /* --primary: #31b869; */
+    --primary: hsl(var(--hue), 90%, 80%);
   }
 }
 
@@ -44,7 +61,11 @@ body{
   background-color: var(--bg);
   color: var(--fg);
   display: flex;
-  font: 1em/1.5 "DM Sans", sans-serif;
+  /* font: 1em/1.5 "DM Sans", sans-serif; */
+  font: 1em/1.5 "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   height: 100%;
   padding: 0rem 0;
   transition:

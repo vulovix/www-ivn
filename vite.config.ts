@@ -9,7 +9,7 @@ export default defineConfig({
     // port: 3000,
     proxy: {
       "/oazaapi": {
-        target: "https://blog.ivn.dev/api",
+        target: "https://oaza.dev/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/oazaapi/, ""),
       },

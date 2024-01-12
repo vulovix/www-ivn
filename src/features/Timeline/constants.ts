@@ -1,5 +1,5 @@
 import { BlogContent } from "./components";
-// import staticRecords from "./static";
+import staticRecords from "./static";
 
 export interface TimelineRecord {
   date: Date;
@@ -44,7 +44,7 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
       // title: `Oaza・${article.title}`,
       title: `${article.title}`,
       date: new Date(article.createdAt),
-      url: `https://blog.ivn.dev/articles/${article.slug}`,
+      url: `https://oaza.dev/articles/${article.slug}`,
       content: () =>
         BlogContent({
           description: article.subtitle,
@@ -52,6 +52,7 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
           categories: article.categories,
         }),
     })),
+    ...staticRecords,
   ];
   return timeline.sort((a, b) => b.date.getTime() - a.date.getTime());
 };
