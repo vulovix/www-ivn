@@ -1,14 +1,55 @@
 import { Month, Timestamp } from "../../utils/date";
 
-const staticRecords = [
-  // {
-  //   date: Timestamp(10, Month.April, 2018),
-  //   title: "First Job",
-  //   content: `Career Journey Begins!`,
-  // },
+export const attachments: Record<
+  string,
+  Array<{ type: string; value: Array<string> | string }>
+> = {
+  Pluton: [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/z3pb47fku7zjj3u73qy7.png",
+        "https://res.cloudinary.com/komplexica/image/upload/hhvygotenpstofbvrs7p.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://pluton.rs",
+    },
+  ],
+  MindHub: [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/tujyeqja7p9smt2qllhm.png",
+        "https://res.cloudinary.com/komplexica/image/upload/o4gyezjflci0zshpfcc1.png",
+        "https://res.cloudinary.com/komplexica/image/upload/g3wjrt4xbkzss5cdz3ka.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://mindhub.dev",
+    },
+  ],
+  "Crystal Cocktail Bar": [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/vne5ace3ue4ejmfrorb2.png",
+        "https://res.cloudinary.com/komplexica/image/upload/r7b5hdgusnqyalbeuky4.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://ivanreacts-9ae4b.firebaseapp.com",
+    },
+  ],
+};
+
+export const timeline = [
   {
-    date: Timestamp(15, Month.August, 2017),
     title: "Crystal Cocktail Bar",
+    date: Timestamp(15, Month.August, 2017),
     content: `My very first React app that went live! 🍻 🎉 \n I'm so proud of this project! 🥳`,
     url: "https://ivanreacts-9ae4b.firebaseapp.com",
   },
@@ -185,5 +226,3 @@ const staticRecords = [
   //     arrival of a new member.`,
   // },
 ];
-
-export default staticRecords;

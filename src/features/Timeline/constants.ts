@@ -1,5 +1,5 @@
 import { BlogContent } from "./components";
-import staticRecords from "./static";
+import { timeline, attachments } from "./static";
 
 export interface TimelineRecord {
   date: Date;
@@ -35,11 +35,8 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
     // }
   } catch (e) {
     console.log(e);
-  } finally {
-    // timeline = [...blog, ...defaultRecords];
   }
-  const timeline: TimelineRecord[] = [
-    // ...staticRecords,
+  const t: TimelineRecord[] = [
     ...blog.map((article: Article) => ({
       // title: `Oaza・${article.title}`,
       title: `${article.title}`,
@@ -50,9 +47,24 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
           description: article.subtitle,
           image: article.image,
           categories: article.categories,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+          attachments: (attachments[article.title] as any) || undefined,
         }),
     })),
-    ...staticRecords,
+    ...timeline.map((record) => ({
+      ...record,
+      title: record.title,
+      date: record.date,
+      url: record.url,
+      content: () =>
+        BlogContent({
+          description: record.content,
+          image: "",
+          categories: [],
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+          attachments: (attachments[record.title] as any) || undefined,
+        }),
+    })),
   ];
-  return timeline.sort((a, b) => b.date.getTime() - a.date.getTime());
+  return t.sort((a, b) => b.date.getTime() - a.date.getTime());
 };

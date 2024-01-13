@@ -32,7 +32,7 @@ const Timeline: React.FC = () => {
       {
         root: null,
         rootMargin: "100px",
-        threshold: 1,
+        threshold: 0,
       }
     );
 
@@ -46,7 +46,6 @@ const Timeline: React.FC = () => {
     };
   }, [timeline]);
 
-  console.log(timeline);
   return (
     <div ref={timelineRef} className="timeline">
       {/* <h1>:)</h1> */}
