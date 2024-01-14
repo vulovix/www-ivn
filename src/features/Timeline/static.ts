@@ -44,6 +44,30 @@ export const attachments: Record<
       value: "https://mindhub.dev",
     },
   ],
+  cryptograph: [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/r7cnjvwkmir1cg3eiiw9.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://76yc3r.csb.app",
+    },
+  ],
+  annoUIng: [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/xceiqbxoi8il8wj6oogi.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://qx6ypq.csb.app",
+    },
+  ],
   "Crystal Cocktail Bar": [
     {
       type: "image",
@@ -65,13 +89,25 @@ export const timeline = [
     date: Timestamp(27, Month.August, 2023),
     content:
       "Sharing stories about the tools I create and capturing day-to-day moments of learning and knowledge growth",
-    url: "https://oaza.dev",
+    // url: "https://oaza.dev",
+  },
+  {
+    title: "annoUIng",
+    date: Timestamp(31, Month.July, 2023),
+    content: `React Components Library with a bad UI/UX`,
+    // url: "https://www.npmjs.com/package/@localxost/annouing",
+  },
+  {
+    title: "cryptograph",
+    date: Timestamp(30, Month.July, 2023),
+    content: `The effect of deciphering textual content`,
+    // url: "https://www.npmjs.com/package/@localxost/cryptograph",
   },
   {
     title: "Crystal Cocktail Bar",
     date: Timestamp(15, Month.August, 2017),
     content: `My very first React app that went live! 🍻 🎉 \n I'm so proud of this project! 🥳`,
-    url: "https://ivanreacts-9ae4b.firebaseapp.com",
+    // url: "https://ivanreacts-9ae4b.firebaseapp.com",
   },
   // //   {
   // //     date: Timestamp(31, Month.December, 2023),

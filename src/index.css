@@ -1,10 +1,5 @@
 :root {
   --hue: 190;
-  --bg: hsl(var(--hue), 10%, 90%);
-  --fg: hsl(var(--hue), 10%, 10%);
-  --primary: hsl(var(--hue), 90%, 50%);
-  /* --primary: #31b869; */
-  /* --primaryT: hsla(var(--hue), 90%, 50%, 0); */
   --trans-dur: 0.3s;
 }
 
@@ -25,11 +20,17 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: snow;
+    --text: hsl(var(--hue), 10%, 90%);
     --bg: hsl(var(--hue), 10%, 5%);
     --fg: hsl(var(--hue), 10%, 90%);
-    /* --primary: #31b869; */
-    --primary: hsl(var(--hue), 90%, 80%);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: hsl(var(--hue), 10%, 5%);
+    --fg: hsl(var(--hue), 10%, 5%);
+    --bg: hsl(var(--hue), 10%, 90%);
   }
 }
 

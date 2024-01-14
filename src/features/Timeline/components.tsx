@@ -59,6 +59,19 @@ export const BlogContent = (props: {
       </figure>
 
       <div className="timeline__item-categories">
+        {props.categories.map((c) => (
+          <a
+            key={c.slug}
+            title="Category"
+            className="timeline__item-category"
+            target="_blank"
+            rel="noreferrer"
+            href={`https://oaza.dev/categories/${c.slug}`}
+          >
+            {/* <RiHashtag /> */}
+            {c.name}
+          </a>
+        ))}
         {props.attachments?.map((attachment, index) => {
           if (attachment.type === "image") {
             return (
@@ -95,19 +108,6 @@ export const BlogContent = (props: {
           }
           return <></>;
         })}
-        {props.categories.map((c) => (
-          <a
-            key={c.slug}
-            title="Category"
-            className="timeline__item-category"
-            target="_blank"
-            rel="noreferrer"
-            href={`https://oaza.dev/categories/${c.slug}`}
-          >
-            {/* <RiHashtag /> */}
-            {c.name}
-          </a>
-        ))}
       </div>
     </div>
   );

@@ -53,9 +53,6 @@ export const getTimeline = async (): Promise<TimelineRecord[]> => {
     })),
     ...timeline.map((record) => ({
       ...record,
-      title: record.title,
-      date: record.date,
-      url: record.url,
       content: () =>
         BlogContent({
           description: record.content,
