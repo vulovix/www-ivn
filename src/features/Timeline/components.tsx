@@ -17,6 +17,19 @@ export const BlogContent = (props: {
   attachments: Array<Attachment> | undefined;
 }): JSX.Element => {
   const [showImage, setShowImage] = useState(false);
+  const imageAttachment: Attachment | undefined = props.attachments?.find(
+    (attachment) => attachment.type === "image"
+  );
+  const imageAssets = imageAttachment
+    ? {
+        ...imageAttachment,
+        value:
+          typeof imageAttachment.value === "string"
+            ? [imageAttachment.value]
+            : imageAttachment.value,
+      }
+    : undefined;
+
   return (
     <div className="timeline__item-pub">
       {/* {props.image ? (
@@ -29,24 +42,20 @@ export const BlogContent = (props: {
       {props.description}
 
       <figure
-        className={`timeline__item-attachments ${showImage ? "show" : "hide"}`}
+        className={`timeline__item-attachments ${
+          imageAssets?.value.length === 1 ? "single" : ""
+        } ${showImage ? "show" : "hide"}`}
       >
-        {props.attachments
-          ?.filter((attachment) => attachment.type === "image")
-          .map((attachment) => {
-            const values =
-              typeof attachment.value === "string"
-                ? [attachment.value]
-                : attachment.value;
-            return values.map((imageLink, index) => (
-              <img
-                className={showImage ? "image-show" : "image-hide"}
-                key={index}
-                src={imageLink}
-                alt={`Attachment`}
-              />
-            ));
-          })}
+        {imageAssets?.value.map((imageLink, index) => {
+          return (
+            <img
+              className={showImage ? "image-show" : "image-hide"}
+              key={index}
+              src={imageLink}
+              alt={`Attachment`}
+            />
+          );
+        })}
       </figure>
 
       <div className="timeline__item-categories">

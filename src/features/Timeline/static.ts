@@ -4,6 +4,19 @@ export const attachments: Record<
   string,
   Array<{ type: string; value: Array<string> | string }>
 > = {
+  // https://www.canva.com/design/DAF53ls2aBs/WnJpaF3Cm9PykoovGUFyww/watch?utm_content=DAF53ls2aBs&utm_campaign=designshare&utm_medium=link&utm_source=editor
+  Oaza: [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/mpfqokvusn5nfjl8cpku.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://oaza.dev",
+    },
+  ],
   Pluton: [
     {
       type: "image",
@@ -47,6 +60,13 @@ export const attachments: Record<
 };
 
 export const timeline = [
+  {
+    title: "Oaza",
+    date: Timestamp(27, Month.August, 2023),
+    content:
+      "Sharing stories about the tools I create and capturing day-to-day moments of learning and knowledge growth",
+    url: "https://oaza.dev",
+  },
   {
     title: "Crystal Cocktail Bar",
     date: Timestamp(15, Month.August, 2017),
