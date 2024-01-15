@@ -68,6 +68,18 @@ export const attachments: Record<
       value: "https://qx6ypq.csb.app",
     },
   ],
+  Wishlist: [
+    {
+      type: "image",
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/xfxdqf52ews7wm2pbohy.png",
+      ],
+    },
+    {
+      type: "url",
+      value: "https://wishlists.dev",
+    },
+  ],
   "Crystal Cocktail Bar": [
     {
       type: "image",
@@ -88,20 +100,25 @@ export const timeline = [
     title: "Oaza",
     date: Timestamp(27, Month.August, 2023),
     content:
-      "Sharing stories about the tools I create and capturing day-to-day moments of learning and knowledge growth",
+      "Sharing stories about the tools I create and capturing day-to-day moments of learning and knowledge growth.",
     // url: "https://oaza.dev",
   },
   {
     title: "annoUIng",
     date: Timestamp(31, Month.July, 2023),
-    content: `React Components Library with a bad UI/UX`,
+    content: `React Components Library with a bad UI/UX.`,
     // url: "https://www.npmjs.com/package/@localxost/annouing",
   },
   {
     title: "cryptograph",
     date: Timestamp(30, Month.July, 2023),
-    content: `The effect of deciphering textual content`,
+    content: `The effect of deciphering textual content.`,
     // url: "https://www.npmjs.com/package/@localxost/cryptograph",
+  },
+  {
+    title: "Wishlist",
+    date: Timestamp(23, Month.November, 2020),
+    content: `Instantly visualize your links as delightful wishes.`,
   },
   {
     title: "Crystal Cocktail Bar",
