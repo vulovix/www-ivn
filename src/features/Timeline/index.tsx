@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import TimelineItem from "./Item";
 import "./style.css";
-import { TimelineRecord, getTimeline } from "./constants";
+import { getTimeline } from "./utils";
 import { noop } from "../../utils/operations";
+import { TimelineRecord } from "./types";
 
 const Timeline: React.FC = () => {
   const [timeline, setTimeline] = useState<TimelineRecord[]>([]);
@@ -48,7 +49,6 @@ const Timeline: React.FC = () => {
 
   return (
     <div ref={timelineRef} className="timeline">
-      {/* <h1>:)</h1> */}
       <ul className="timeline__items">
         {timeline.map((record, index) => (
           <TimelineItem key={index} record={record} localeCode={localeCode} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { TimelineRecord } from "./constants";
+import { TimelineRecord } from "./types";
 
 interface TimelineItemProps {
   record: TimelineRecord;
@@ -7,25 +7,18 @@ interface TimelineItemProps {
 }
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ record, localeCode }) => {
-  const Content =
-    typeof record.content === "string" ? (
-      <div className="timeline__item-pub">{record.content}</div>
-    ) : (
-      <record.content />
-    );
-  const DRaw = new Date(record.date);
-  const formattedDate = DRaw.toLocaleDateString(localeCode, {
+  const date = new Date(record.date);
+  const formattedDate = date.toLocaleDateString(localeCode, {
     year: "numeric",
     month: "long",
-    day: "numeric",
+    day: "2-digit",
   });
 
   return (
     <li className="timeline__item">
-      <time className="timeline__item-time" dateTime={DRaw.toISOString()}>
+      <time className="timeline__item-time" dateTime={date.toISOString()}>
         {formattedDate}
       </time>
-      <br />
       <a
         className="timeline__item-link"
         target={record.url?.startsWith("https://") ? "_blank" : undefined}
@@ -34,8 +27,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ record, localeCode }) => {
       >
         {record.title}
       </a>
-      <br />
-      {Content}
+      {<record.content />}
     </li>
   );
 };
