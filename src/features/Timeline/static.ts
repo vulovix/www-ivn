@@ -2,6 +2,18 @@ import { Month, Timestamp } from "../../utils/date";
 import { Attachment, AttachmentType } from "./types";
 
 export const attachments: Record<string, Array<Attachment>> = {
+  Copylot: [
+    {
+      type: AttachmentType.Image,
+      value: [
+        "https://res.cloudinary.com/komplexica/image/upload/kfxkpqgmkpa9ptulfg3d.png",
+      ],
+    },
+    {
+      type: AttachmentType.URL,
+      value: ["https://copylot.dev"],
+    },
+  ],
   Oaza: [
     {
       type: AttachmentType.Image,
@@ -93,6 +105,12 @@ export const attachments: Record<string, Array<Attachment>> = {
 };
 
 export const timeline = [
+  {
+    title: "Copylot",
+    date: Timestamp(8, Month.February, 2024),
+    content: () =>
+      "A tool for making and sharing bits of code with friends and coworkers.",
+  },
   {
     title: "Oaza",
     date: Timestamp(27, Month.August, 2023),
